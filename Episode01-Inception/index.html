@@ -3,17 +3,28 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="./index.css" />
     <title>Namaste React</title>
   </head>
   <body>
-    <h1>Hello World</h1>
+    <!--Using Html-->
+    <h1>Hello World from HTML</h1>
+    <hr />
+
+    <!--Using JavaScript-->
+    <div id="jsRoot"></div>
+    <hr />
+
+    <!--Using React CDN-->
     <div id="root"></div>
     <script crossorigin src="https://unpkg.com/react@18/umd/react.development.js"></script>
     <script crossorigin src="https://unpkg.com/react-dom@18/umd/react-dom.development.js"></script>
+    <script src="./App.js"></script>
     <script>
-      const heading = React.createElement("h1", {}, "Hello World from React");
-      const root = ReactDOM.createRoot(document.getElementById("root"));
-      root.render(heading);
+      const headTag = document.createElement("h2");
+      const jsRoot = document.getElementById("jsRoot");
+      headTag.innerText = "Hello World from JavaScript";
+      jsRoot.appendChild(headTag);
     </script>
   </body>
 </html>
