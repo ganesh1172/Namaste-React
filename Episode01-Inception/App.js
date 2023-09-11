@@ -1,3 +1,20 @@
+/**
+ * Struture
+ *  <div>
+ *    <h3></h3>
+ *    <div>
+ *       <div></div>
+ *       <div></div>
+ *    </div>
+ *    <h3></h3>
+ *    <div>
+ *       <div></div>
+ *       <div></div>
+ *    </div>
+ *  </div>
+ *
+ **/
+
 const heading = React.createElement("div", { id: "heading" }, [
   React.createElement("h3", {}, "Heading React1"),
   React.createElement(
