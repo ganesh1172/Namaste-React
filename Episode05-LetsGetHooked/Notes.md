@@ -1,16 +1,17 @@
-- Before start any app start with planning.
-- Create mockup/wireframe of app
-- Decide component which will be used in app
+## code clean
 
-### Props - (Property/Argument)
+#### Two type to export files
 
-- Passing arguments to a function
-- when passing dynamic data to component pass as props
+- Default Export/Import
 
-### Config-Driven-UI
+* export default Component;
+* for single file
+* do not use { fileName}
+* import component from "path";
 
-UI is driven by config
+- Name Export/Import
 
-React never use index as key in.
-
-#### not using keys(not acceptable) <<< index as key <<<<<< unique key(best practice)
+* export const Component
+* for multiple things from single file
+* use { fileName } to import things
+* import {component} from "path
