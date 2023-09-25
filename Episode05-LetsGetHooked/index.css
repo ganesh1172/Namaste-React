@@ -50,3 +50,22 @@
   border-top-right-radius: 10px;
   width: 100%;
 }
+
+.filter {
+  margin: 15px 0;
+}
+.btn-filter {
+  padding: 10px;
+  cursor: pointer;
+  background-color: aqua;
+  border-radius: 10px;
+  border: none;
+  font-size: 18px;
+  color: red;
+  font-weight: bold;
+}
+
+.btn-filter:hover {
+  color: #fff;
+  background-color: palevioletred;
+}
