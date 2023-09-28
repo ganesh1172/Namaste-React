@@ -1,9 +1,21 @@
 import RestaurantCard from "./RestaurantCard";
-import resList from "../utils/mockData";
-import { useState } from "react";
+// import resList from "../utils/mockData";
+import { useEffect, useState } from "react";
 
 const Body = () => {
-  const [listOfRestaurants, useListOfRestaurants] = useState(resList);
+  const [listOfRestaurants, setListOfRestaurants] = useState([]);
+
+  useEffect(() => {
+    fetchData();
+  }, []);
+
+  const fetchData = async () => {
+    const data = await fetch(
+      "https://ganesh1172.github.io/swiggy-mock-api/data.json"
+    );
+    const json = await data.json();
+    setListOfRestaurants(json);
+  };
 
   return (
     <div className="body">
@@ -11,10 +23,10 @@ const Body = () => {
         <button
           className="btn-filter"
           onClick={() => {
-            const filteredList = resList.filter(
+            const filteredList = listOfRestaurants.filter(
               (res) => res.data.avgRating > 4
             );
-            useListOfRestaurants(filteredList);
+            setListOfRestaurants(filteredList);
           }}
         >
           Top Rated
