@@ -90,14 +90,14 @@
 
 .shimmer-container {
   margin: 5px;
-  background-color: blanchedalmond;
+  background-color: rgb(227, 141, 14);
   display: flex;
   gap: 10px;
   flex-wrap: wrap;
 }
 
 .shimmer-card {
-  background-color: rgb(191, 200, 200);
+  background-color: rgb(64, 139, 139);
   max-width: 250px;
   border-radius: 10px;
 }

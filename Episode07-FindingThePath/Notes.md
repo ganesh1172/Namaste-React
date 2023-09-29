@@ -1,27 +1,22 @@
-- Monolith Architecture
+- useEffect
 
-*
+* If no dependency array => useEffect is called on every render
+* If dependency array is empty = [] => useEffect is called on initial render(just once)
+* If dependency array is [btnNameReact] => called everytime btnNameReact is updated
 
-- Microservise Architecture
+#### React-Router
 
-*
+- CreateBrowserRouter
+- RouterProvider
+- useRouteError - to show error page
+- outlet - to switch other page
+- Link - to navigate page(like ancher tag in html)
 
-- Our project follows UI-microservice
+#### Single Page Application
 
-* API
+- Switching/routing pages without refreshing fullpage.
 
-- Two ways to make api call
+##### Two types of Routing
 
-1. pageLoad -> API call -> Render
-2. pageLoad -> render(UI Load) -> API call -> re-render app
-
-- for api call
-- useEffect will call after your component render
-  useEffect((arrow) => {callback}, [dependency]){
-  }
-
-#### CORS
-
-- for input type use onChange handler;
-
-- whenever you change local variable, react trigger a reconciliation(re-render) cycle.(during searching)
+- Client Side Routing
+- Server Side Routing
