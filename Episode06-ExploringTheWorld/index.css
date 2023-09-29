@@ -4,6 +4,11 @@
   box-sizing: border-box;
 }
 
+.App {
+  width: calc(100% - 100px);
+  margin: 0 auto;
+}
+
 .header {
   display: flex;
   justify-content: space-between;
@@ -25,7 +30,7 @@
 
 .res-container {
   margin: 5px;
-  background-color: blanchedalmond;
+  /* background-color: blanchedalmond; */
   display: flex;
   gap: 10px;
   flex-wrap: wrap;
@@ -51,21 +56,48 @@
   width: 100%;
 }
 
+.rate-time {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
 .filter {
   margin: 15px 0;
+  display: flex;
+  gap: 10;
+  align-items: center;
 }
-.btn-filter {
+
+.search-filter {
+  padding: 10px;
+}
+.btn {
   padding: 10px;
   cursor: pointer;
-  background-color: aqua;
+  background-color: rgb(11, 229, 218);
   border-radius: 10px;
   border: none;
   font-size: 18px;
-  color: red;
+  color: rgb(225, 0, 255);
   font-weight: bold;
 }
 
-.btn-filter:hover {
+.btn:hover {
   color: #fff;
   background-color: palevioletred;
+}
+
+.shimmer-container {
+  margin: 5px;
+  background-color: blanchedalmond;
+  display: flex;
+  gap: 10px;
+  flex-wrap: wrap;
+}
+
+.shimmer-card {
+  background-color: rgb(191, 200, 200);
+  max-width: 250px;
+  border-radius: 10px;
 }

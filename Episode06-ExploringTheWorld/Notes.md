@@ -21,3 +21,7 @@
   }
 
 #### CORS
+
+- for input type use onChange handler;
+
+- whenever you change local variable, react trigger a reconciliation(re-render) cycle.(during searching)

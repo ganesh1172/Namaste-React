@@ -7,16 +7,20 @@ const RestaurantCard = ({ resData }) => {
     cuisines,
     avgRating,
     costForTwo,
-    deliveryTime,
-  } = resData?.data; //destructring data with optional chain
+    sla,
+    areaName,
+  } = resData; //destructring data with optional chain
   return (
     <div className="res-card">
       <img className="res-logo" src={IMG_URL + cloudinaryImageId} alt={name} />
       <h3>{name}</h3>
-      <h4>{cuisines.join(", ")}</h4>
-      <h4>{avgRating} stars</h4>
-      <h4>₹{costForTwo / 100}/- FOR TWO</h4>
-      <h4>{deliveryTime} Minutes</h4>
+      <h4>{areaName}</h4>
+      <p>{cuisines.join(", ")}</p>
+      <h4>{costForTwo.toUpperCase()}</h4>
+      <div className="rate-time">
+        <p>{avgRating} stars</p>
+        <p>{sla.deliveryTime} Minutes</p>
+      </div>
     </div>
   );
 };
