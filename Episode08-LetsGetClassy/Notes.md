@@ -47,3 +47,14 @@
 - in useEffect() :- if we not put dependency it will call after every component render
 
 - in ComponentDidMount - it will can only once. but later it only update
+
+useEffect(() => {
+const timer = setInterval(() =>{
+console.log('set Interval');
+}, 1000);
+
+return () => {
+clearInterval(timer);
+console.log("Unmounting phase in Fn component');
+}
+})
