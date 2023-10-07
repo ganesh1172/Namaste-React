@@ -1,21 +1,58 @@
-#### Higher Order Components(HOC)
+### Redux
 
-- Its function that take component as input and return component(enhance)
+- Redux is not mandatory in most of application.(use it only if it required).
+- Do not use if your application is small or mid size.
+- React and Redux are different libraries.
+- They offers easy debugging.
 
-#### Lifting State up
+=> <b>Two Libraries</b>:-
 
-#### Controlled and Uncontrolled component
+- React-Redux
+- Redux-Toolkit
 
-#### props drilling
+=> <b>Uses </b>:-
 
-- passing data from grandparent => parent => child => ....
+- To handle large amount of data.
 
-#### Context API/React Context
+### Redux Toolkit
 
-- storing data on seperate file(globally) and acces it anywhere in appp
-- context provide global space and provide data
+- It is standard way to write Redux logic. It help to address three common conerns about redux.
+- Configuring a redux store is too complicated
+- I have to add a lot of packages to get redux to do anything useful.
+- Redux requries too much boilerplate code.
 
-* createContext({ pass data})
-* useContext({to get data}) Hook- in functional component
-* <UserContext.Consumer>{(data) => console.log(data)}</UserContext.Consumer> -- in class component
-* <UserContext.Provider value={}><div className="App"></div></UserContext.Provider> -- provide data to all child
+### Redux Store
+
+- Its js object that kept in global/central place.
+- It have slices which divide store in multiple part.
+- example from our app
+
+#### workflow
+
+- When you click on Add button, it DISPATCH a ACTION. That call ACTION then REDUCER function will modifies cart.(write)
+- SELECTOR(Subscribing to the store) read data from stor and SELECTOR will modifies cart in header.
+
+### Redux Toolkit - App flowchart
+
+![RTK-flowchart](./src/Images/rtk-flowchart.png)
+
+### Algorithm
+
+- Install @reduxjs/toolkit and react-redux
+- Build out store
+- Connect out store to our app
+- Slice (CartSlice)
+- Dispatch(action)
+- Selector
+
+difference between
+onClick={handleAddItem}
+onClick={() => handleAddItem(item)}
+onClick={handleAddItem(item)}
+
+reducer - used in store
+reducers - used in slice
+
+## for documentation purpose :
+
+- /tutorials/rtk-query
