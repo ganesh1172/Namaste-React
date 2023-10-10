@@ -1,14 +1,12 @@
+# Episode 06 - Exploring The World
+
+### Two type of Architecture
+
 - Monolith Architecture
-
-*
-
 - Microservise Architecture
-
-*
-
 - Our project follows UI-microservice
 
-* API
+#### API
 
 - Two ways to make api call
 
@@ -17,11 +15,13 @@
 
 - for api call
 - useEffect will call after your component render
+
+```
   useEffect((arrow) => {callback}, [dependency]){
   }
+```
 
 #### CORS
 
-- for input type use onChange handler;
-
+- for input type use onChange handler.
 - whenever you change local variable, react trigger a reconciliation(re-render) cycle.(during searching)

@@ -1,4 +1,4 @@
-# Episode03-Laying the Foundation
+# Episode 03 - Laying the Foundation
 
 ### script :
 

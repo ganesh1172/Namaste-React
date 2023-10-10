@@ -12,11 +12,13 @@
 - outlet - to switch other page
 - Link - to navigate page(like ancher tag in html)
 
+# Episode 07 - Finding The Path
+
 #### Single Page Application
 
 - Switching/routing pages without refreshing fullpage.
 
-##### Two types of Routing
+#### Two types of Routing
 
 - Client Side Routing
 - Server Side Routing

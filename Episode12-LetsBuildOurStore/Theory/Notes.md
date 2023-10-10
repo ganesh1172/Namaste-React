@@ -1,3 +1,5 @@
+# Episode 12 - Let's Build Our Store
+
 ### Redux
 
 - Redux is not mandatory in most of application.(use it only if it required).
@@ -5,12 +7,12 @@
 - React and Redux are different libraries.
 - They offers easy debugging.
 
-=> <b>Two Libraries</b>:-
+#### Two Libraries :-
 
 - React-Redux
 - Redux-Toolkit
 
-=> <b>Uses </b>:-
+##### Uses
 
 - To handle large amount of data.
 
@@ -34,7 +36,7 @@
 
 ### Redux Toolkit - App flowchart
 
-![RTK-flowchart](./src/Images/rtk-flowchart.png)
+![RTK-flowchart](../src/Images/rtk-flowchart.png)
 
 ### Algorithm
 
@@ -46,12 +48,21 @@
 - Selector
 
 difference between
-onClick={handleAddItem}
-onClick={() => handleAddItem(item)}
-onClick={handleAddItem(item)}
 
-reducer - used in store
-reducers - used in slice
+```
+onClick={handleAddItem}
+```
+
+```
+onClick={() => handleAddItem(item)}
+```
+
+```
+onClick={handleAddItem(item)}
+```
+
+- reducer - used in store
+- reducers - used in slice
 
 ## for documentation purpose :
 

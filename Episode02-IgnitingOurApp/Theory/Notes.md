@@ -1,33 +1,35 @@
-##### NPM
+# Episode 02 - Igniting Our App
+
+#### NPM
 
 - Npm is not abbrevation of 'Node Package Manager'. It's a package manager. Any package which need for project creation you can find it on NPM.
 
-##### package.json
+#### package.json
 
 - Its basically configuration of NPM. It keep only approximate version update.
 
 - <b>Tilde</b> : '~version', will update you to all future patch versions, with incrementing the major version. for eg. ~1.2.3 will upgrade from ~1.2.3 to 1.3.2
 - <b>Caret</b> : '^version', will update you to all future patch versions, with incrementing the minor version. for eg. ^1.2.3 will upgrade from ~1.2.3 to 1.2.4
 
-##### Transitive Dependency
+#### Transitive Dependency
 
 - A package is depend on another package Dependency.
 
-##### browerlist
+#### browerlist
 
 - To support older browser or other
 
-##### package.lock.json
+#### package.lock.json
 
 - It keep record of every single version update.
 
-##### Bundler
+#### Bundler
 
 - Bundler packs you app to shift in production. for eg. Parcel, Webpack, Veet.
 
-##### Parcel
+#### Parcel
 
-##### Dependency : Two types of Dependency
+#### Dependency : Two types of Dependency
 
 1. Dev Dependency : It use in developement.
 2. Normal Dependency : It use in Production.
@@ -62,7 +64,7 @@
 1. Fetching from a cdn make costly operation.
 2. There might be change occur in versions(package). So we need to update links in project.
 
-### Command to:-
+#### Command to:-
 
 - npm init
 - npm install -D parcel
