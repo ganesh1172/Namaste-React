@@ -12,7 +12,16 @@ const RestaurantMenu = () => {
 
   if (resInfo === null) return <Shimmer />;
 
-  const { name, cuisines } = resInfo?.cards[0]?.card?.card?.info;
+  const {
+    name,
+    cuisines,
+    areaName,
+    sla,
+    avgRating,
+    totalRatingsString,
+    feeDetails,
+    costForTwoMessage,
+  } = resInfo?.cards[0]?.card?.card?.info;
 
   const catergory =
     resInfo?.cards[2]?.groupedCard?.cardGroupMap?.REGULAR?.cards.filter(
@@ -20,11 +29,29 @@ const RestaurantMenu = () => {
         c?.card?.card?.["@type"] ===
         "type.googleapis.com/swiggy.presentation.food.v2.ItemCategory"
     );
-
+  console.log("cater", resInfo?.cards[0]?.card?.card?.info);
   return (
-    <div className="w-6/12 m-auto text-center">
-      <h1 className="font-bold py-6 text-2xl">{name}</h1>
-      <p className="font-bold text-lg">{cuisines.join(", ")}</p>
+    <div className="w-6/12 m-auto">
+      <div className="my-6 flex justify-between items-center">
+        <div>
+          <h1 className="text-3xl font-bold mb-2">{name}</h1>
+          <p className="text-base text-gray-600">{cuisines.join(", ")}</p>
+          <p className="text-base text-gray-600">
+            {areaName}, {sla.lastMileTravelString}
+          </p>
+        </div>
+        <div className="text-base border rounded-lg p-2 text-center">
+          <h3 className="text-green-600 text-lg font-bold">⭐ {avgRating}</h3>
+          <hr className="my-0.5" />
+          <p className="text-xs text-gray-500">{totalRatingsString}</p>
+        </div>
+      </div>
+      <p className="text-base text-gray-600">🚴{feeDetails.message} </p>
+      <hr className="my-4 border-1 border-gray-400 border-dashed" />
+      <div className="flex gap-4 text-base font-semibold">
+        <p>🕘{sla.slaString}</p>
+        <p>₹ {costForTwoMessage}</p>
+      </div>
       {/* catergory accordian */}
       {catergory.map((category, index) => (
         <RestaurantCategory

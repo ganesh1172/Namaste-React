@@ -11,11 +11,12 @@ import RestaurantMenu from "./components/RestaurantMenu";
 import UserContext from "./utils/UserContext";
 import appStore from "./utils/appStore";
 import Cart from "./components/Cart";
+import Footer from "./components/Footer";
 // import Grocery from "./components/Grocery";
 
 // const React = require("react");
 
-const Grocery = lazy(() => import("./components/Grocery"));
+// const Grocery = lazy(() => import("./components/Grocery"));
 
 const AppLaoyut = () => {
   const [userName, setUserName] = useState();
@@ -34,6 +35,7 @@ const AppLaoyut = () => {
             <Header />
           </UserContext.Provider>
           <Outlet />
+          <Footer />
         </div>
       </UserContext.Provider>
     </Provider>
@@ -54,14 +56,14 @@ const appRouter = createBrowserRouter([
         path: "/contact",
         element: <Contact />,
       },
-      {
-        path: "/grocery",
-        element: (
-          <Suspense fallback={<h1>....Loading</h1>}>
-            <Grocery />
-          </Suspense>
-        ),
-      },
+      // {
+      //   path: "/grocery",
+      //   element: (
+      //     <Suspense fallback={<h1>....Loading</h1>}>
+      //       <Grocery />
+      //     </Suspense>
+      //   ),
+      // },
       {
         path: "/restaurant/:resId",
         element: <RestaurantMenu />,

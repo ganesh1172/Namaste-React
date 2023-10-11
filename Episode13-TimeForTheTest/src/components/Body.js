@@ -12,7 +12,7 @@ const Body = () => {
 
   const [searchText, setSearchText] = useState("");
 
-  const { loggedInUser, setUserName } = useContext(UserContext);
+  // const { loggedInUser, setUserName } = useContext(UserContext);
 
   // const RestaurantCardPromoted = withPromotedLabel(RestaurantCard);
 
@@ -24,8 +24,10 @@ const Body = () => {
     const data = await fetch(SWIGGY_URL);
 
     const json = await data.json();
-
     // Optional Chaining
+    console.log(
+      json?.data?.cards[2]?.card?.card?.gridElements?.infoWithStyle?.restaurants
+    );
     setListOfRestraunts(
       json?.data?.cards[2]?.card?.card?.gridElements?.infoWithStyle?.restaurants
     );
@@ -43,48 +45,48 @@ const Body = () => {
       </h1>
     );
 
-  return listOfRestaurants.length === 0 ? (
-    <Shimmer />
-  ) : (
-    <div className="body">
-      <div className="flex items-center gap-4 m-8">
-        <div className="search ">
-          <input
-            type="text"
-            data-testid="searchInput"
-            className="px-4 py-2 border border-solid border-black"
-            value={searchText}
-            onChange={(e) => {
-              setSearchText(e.target.value);
-            }}
-          />
-          <button
-            className="px-4 py-2 bg-green-200 rounded-r-lg"
-            onClick={() => {
-              const filteredRestaurant = listOfRestaurants.filter((res) =>
-                res.info.name.toLowerCase().includes(searchText.toLowerCase())
-              );
+  return (
+    <div className="pt-10">
+      <div className="container mx-auto">
+        <div className="flex justify-center items-center mb-4">
+          <div className="search flex w-6/12">
+            <input
+              type="text"
+              data-testid="searchInput"
+              className="w-10/12 p-2 border-2 rounded-l-lg border-black"
+              placeholder="Enter restaurant name...."
+              value={searchText}
+              onChange={(e) => {
+                setSearchText(e.target.value);
+              }}
+            />
+            <button
+              className="px-2 py-2.5 bg-blue-200 font-semibold rounded-r-lg text-gray-800 hover:bg-red-200"
+              onClick={() => {
+                const filteredRestaurant = listOfRestaurants.filter((res) =>
+                  res.info.name.toLowerCase().includes(searchText.toLowerCase())
+                );
 
-              setFilteredRestaurant(filteredRestaurant);
-            }}
-          >
-            Search
-          </button>
-        </div>
-        <div className="search">
-          <button
-            className="px-4 py-2 bg-gray-300 rounded-lg"
-            onClick={() => {
-              const filteredList = listOfRestaurants.filter(
-                (res) => res.info.avgRating > 4
-              );
-              setFilteredRestaurant(filteredList);
-            }}
-          >
-            Top Rated Restaurants
-          </button>
-        </div>
-        <div className="search">
+                setFilteredRestaurant(filteredRestaurant);
+              }}
+            >
+              🔍 Search
+            </button>
+          </div>
+          <div className="search">
+            <button
+              className="px-4 py-2 text-sm text-gray-500 border border-gray-300 rounded-full hover:text-black hover:border-black"
+              onClick={() => {
+                const filteredList = listOfRestaurants.filter(
+                  (res) => res.info.avgRating > 4
+                );
+                setFilteredRestaurant(filteredList);
+              }}
+            >
+              Rating 4.0+
+            </button>
+          </div>
+          {/* <div className="search">
           <label>UserName : </label>
           <input
             type="text"
@@ -94,24 +96,18 @@ const Body = () => {
               setUserName(e.target.value);
             }}
           />
+        </div> */}
         </div>
-      </div>
-      <div className="flex gap-1 flex-wrap">
-        {filteredRestaurant.map((restaurant) => (
-          <Link
-            to={"/restaurant/" + restaurant?.info.id}
-            key={restaurant?.info.id}
-          >
-            <RestaurantCard resData={restaurant?.info} />
-
-            {/* for promotion label */}
-            {/* {restaurant.data.promoted ? (
-              <RestaurantCardPromoted resData={restaurant?.info} />
-            ) : (
+        <div className="flex flex-wrap justify-center gap-1">
+          {filteredRestaurant.map((restaurant) => (
+            <Link
+              to={"/restaurant/" + restaurant?.info.id}
+              key={restaurant?.info.id}
+            >
               <RestaurantCard resData={restaurant?.info} />
-            )} */}
-          </Link>
-        ))}
+            </Link>
+          ))}
+        </div>
       </div>
     </div>
   );

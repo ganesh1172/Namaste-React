@@ -1,6 +1,6 @@
-import { useContext } from "react";
+// import { useContext } from "react";
 import { IMG_URL } from "../utils/constants";
-import UserContext from "../utils/UserContext";
+// import UserContext from "../utils/UserContext";
 
 const RestaurantCard = ({ resData }) => {
   const {
@@ -12,29 +12,39 @@ const RestaurantCard = ({ resData }) => {
     sla,
     areaName,
   } = resData; //destructring data with optional chain
+  // const { loggedInUser } = useContext(UserContext);
 
-  const { loggedInUser } = useContext(UserContext);
   return (
     <div
       data-testid="resCard"
-      className="m-4 p-4 w-[300px] max-h-[32rem] bg-gray-300 rounded-lg hover:bg-gray-400"
+      className="m-4 p-4 w-[250px] shadow-xl rounded-lg hover:bg-gray-200"
     >
       <img
         className="rounded-lg"
         src={IMG_URL + cloudinaryImageId}
         alt={name}
       />
-      <h3 className="font-bold py-4 text-lg">{name}</h3>
-      <h4>{areaName}</h4>
-      <p>{cuisines.join(", ")}</p>
-      <h4>{costForTwo.toUpperCase()}</h4>
-      <div className="rate-time">
-        <p>{avgRating} stars</p>
-        <p>{sla.deliveryTime} Minutes</p>
-        <p>
-          username : <span className="font-bold">{loggedInUser}</span>
-        </p>
+      <h3 className="font-semibold my-1 text-base">
+        {name.length > 25 ? `${name.substring(0, 25)}...` : name}
+      </h3>
+      <div className="text-sm">
+        <p>{cuisines.slice(0, 3).join(", ")}</p>
+        <p>🏡 {areaName}</p>
       </div>
+      <ul className="flex justify-between items-center mt-1.5 text-sm font-semibold">
+        <li
+          className={`px-1.5 py-0.5 rounded-lg ${
+            avgRating > 4 ? "bg-green-400" : "bg-red-500"
+          }`}
+        >
+          ⭐{avgRating}
+        </li>
+        <li>🛣️{sla.lastMileTravelString}</li>
+        <li>{costForTwo}</li>
+        {/* <p>
+          username : <span className="font-bold">{loggedInUser}</span>
+        </p> */}
+      </ul>
     </div>
   );
 };

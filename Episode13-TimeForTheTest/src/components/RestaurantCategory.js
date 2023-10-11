@@ -5,11 +5,10 @@ const RestaurantCategory = ({ data, showItems, setShowIndex }) => {
   const handleClick = () => {
     setShowIndex();
   };
-  console.log(data);
   return (
     <div>
       {/* {header} */}
-      <div className="my-4 bg-purple-100 rounded-lg shadow-lg p-4">
+      <div className="my-4 bg-blue-50 rounded-lg p-4">
         <div
           className="flex justify-between items-center overflow-hidden transition-all cursor-pointer"
           onClick={handleClick}

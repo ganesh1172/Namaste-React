@@ -1,8 +1,8 @@
 import { Link } from "react-router-dom";
-import { LOGO_URL } from "../utils/constants";
+import LOGO from "../Images/logo.png";
 import { useContext, useState } from "react";
 import useOnlineStatus from "../utils/useOnlineStatus";
-import UserContext from "../utils/UserContext";
+// import UserContext from "../utils/UserContext";
 import { useSelector } from "react-redux";
 
 const Header = () => {
@@ -10,44 +10,54 @@ const Header = () => {
   // add onlineStatus
   const onlineStatus = useOnlineStatus();
 
-  const { loggedInUser } = useContext(UserContext);
+  // const { loggedInUser } = useContext(UserContext);
 
   const cartItems = useSelector((store) => store.cart.items);
   return (
-    <div className="flex justify-between bg-pink-100 shadow-lg sm:bg-yellow-50 lg:bg-green-50">
-      <div className="logo-container">
-        <img src={LOGO_URL} className="w-56" alt="Company Logo" />
-      </div>
-      <div className="flex items-center">
-        <ul className="flex p-4 m-4 gap-6">
-          <li>Online Status: {onlineStatus ? "🟢" : "🔴"}</li>
-          <li>
-            <Link to="/">Home</Link>
-          </li>
-          <li>
-            <Link to="/about">About Us</Link>
-          </li>
-          <li>
+    <div className="sticky top-0 bg-white shadow-gray-200 shadow-lg">
+      <div className="container py-2 mx-auto flex justify-between">
+        <div className="logo-container">
+          <Link to="/">
+            <img
+              src={LOGO}
+              className="w-[100px] rounded-full"
+              alt="Company Logo"
+            />
+          </Link>
+        </div>
+        <div className="flex items-center">
+          <ul className="flex gap-10 text-lg font-mono font-semibold">
+            {/* <li>Online Status: {onlineStatus ? "🟢" : "🔴"}</li> */}
+            <li>
+              <Link to="/">🏠 Home</Link>
+            </li>
+            <li>
+              <Link to="/about">🧑‍💻 About Us</Link>
+            </li>
+            {/* <li>
             <Link to="/grocery">Grocery</Link>
-          </li>
-          <li>
-            <Link to="/contact">Contact</Link>
-          </li>
-          <li className="font-bold">
-            <Link to="/cart">Cart [{cartItems.length}]</Link>
-          </li>
-          <button
-            className="btn"
-            onClick={() =>
-              logReactBtn === "Login"
-                ? setLogReactBtn("Logout")
-                : setLogReactBtn("Login")
-            }
-          >
-            {logReactBtn}
-          </button>
-          <li className="font-bold">{loggedInUser}</li>
-        </ul>
+          </li> */}
+            <li>
+              <Link to="/contact">📞 Contact</Link>
+            </li>
+            <li>
+              <Link to="/cart">
+                {cartItems.length ? `[${cartItems.length}]` : ""}🛒
+              </Link>
+            </li>
+            <button
+              className="btn"
+              onClick={() =>
+                logReactBtn === "Login"
+                  ? setLogReactBtn("Logout")
+                  : setLogReactBtn("Login")
+              }
+            >
+              💻 {logReactBtn}
+            </button>
+            {/* <li className="font-bold">{loggedInUser}</li> */}
+          </ul>
+        </div>
       </div>
     </div>
   );
