@@ -1,8 +1,7 @@
 {
-  "name": "episode02-ignitingourapp",
+  "name": "namsate-react",
   "version": "1.0.0",
-  "description": "This is episode 02 - Igniting Our App of Namaste React",
-  "main": "App.js",
+  "description": "This is live course.",
   "scripts": {
     "start": "parcel index.html",
     "build": "parcel build index.html",

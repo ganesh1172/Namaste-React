@@ -1,3 +1,10 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+.no-data {
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
