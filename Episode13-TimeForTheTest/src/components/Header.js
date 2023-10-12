@@ -28,25 +28,25 @@ const Header = () => {
         <div className="flex items-center">
           <ul className="flex gap-10 text-lg font-mono font-semibold">
             {/* <li>Online Status: {onlineStatus ? "🟢" : "🔴"}</li> */}
-            <li>
+            <li className="border-b-2 border-transparent hover:border-current cursor-pointer select-none">
               <Link to="/">🏠 Home</Link>
             </li>
-            <li>
+            <li className="border-b-2 border-transparent hover:border-current cursor-pointer select-none">
               <Link to="/about">🧑‍💻 About Us</Link>
             </li>
             {/* <li>
             <Link to="/grocery">Grocery</Link>
           </li> */}
-            <li>
+            <li className="border-b-2 border-transparent hover:border-current cursor-pointer select-none">
               <Link to="/contact">📞 Contact</Link>
             </li>
-            <li>
+            <li className="border-b-2 border-transparent hover:border-current cursor-pointer select-none">
               <Link to="/cart">
                 {cartItems.length ? `[${cartItems.length}]` : ""}🛒
               </Link>
             </li>
             <button
-              className="btn"
+              className="btn border-b-2 border-transparent hover:border-current cursor-pointer select-none"
               onClick={() =>
                 logReactBtn === "Login"
                   ? setLogReactBtn("Logout")

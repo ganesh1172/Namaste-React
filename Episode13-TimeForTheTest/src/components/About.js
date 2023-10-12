@@ -35,7 +35,7 @@ const About = () => {
     <div className="container mx-auto flex justify-between items-center">
       <div className="w-6/12">
         <h1 className="text-5xl font-semibold">Welcome to</h1>
-        <div className="w-fit text-8xl bg-blue-300 font-semibold text-white rounded-lg px-3 py-1 my-2">
+        <div className="w-fit text-8xl bg-blue-400 font-semibold text-white rounded-lg px-3 py-1 my-2">
           Foodie Hub
         </div>
         <p className="text-lg font-semibold italic">

@@ -5,6 +5,8 @@ import { SWIGGY_URL } from "../utils/constants";
 import { Link } from "react-router-dom";
 import useOnlineStatus from "../utils/useOnlineStatus";
 import UserContext from "../utils/UserContext";
+import CheckConnection from "../Images/internet-fail.jpg";
+import UserOffline from "./UserOffline";
 
 const Body = () => {
   const [listOfRestaurants, setListOfRestraunts] = useState([]);
@@ -25,9 +27,6 @@ const Body = () => {
 
     const json = await data.json();
     // Optional Chaining
-    console.log(
-      json?.data?.cards[2]?.card?.card?.gridElements?.infoWithStyle?.restaurants
-    );
     setListOfRestraunts(
       json?.data?.cards[2]?.card?.card?.gridElements?.infoWithStyle?.restaurants
     );
@@ -40,13 +39,23 @@ const Body = () => {
 
   if (onlineStatus === false)
     return (
-      <h1>
-        Looks like you're offline!! Please check your internet connection;
-      </h1>
+      <div className="flex flex-col justify-center items-center h-screen">
+        <img
+          className="w-fit mx-auto"
+          src={CheckConnection}
+          alt="Internet connection"
+        />
+
+        <h1 className="text-xl font-semibold text-red-400 text-center">
+          Looks like you're offline!! Please check your 🛰️ internet connection;
+        </h1>
+      </div>
     );
 
-  return (
-    <div className="pt-10">
+  return listOfRestaurants.length === 0 ? (
+    <Shimmer />
+  ) : (
+    <div className="my-12">
       <div className="container mx-auto">
         <div className="flex justify-center items-center mb-4">
           <div className="search flex w-6/12">
