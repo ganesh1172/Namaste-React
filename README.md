@@ -1,15 +1,15 @@
 # ❤️ Namaste React 🙏
 
-### \_[Namaste React Live Course](https://learn.namastedev.com/courses/namaste-react-live) from Zero to Hero 🚀 by [Akshay Saini](https://www.linkedin.com/in/akshaymarch7/) Founder of [NamasteDev](https://courses.namastedev.com/learn/Namaste-React).
+### [Namaste React Live Course](https://learn.namastedev.com/courses/namaste-react-live) from Zero to Hero 🚀 by [Akshay Saini](https://www.linkedin.com/in/akshaymarch7/) Founder of [NamasteDev](https://courses.namastedev.com/learn/Namaste-React).
 
-- Basically, [🥗 FoodieHub App](https://foodie-hubs.netlify.app/) created as practise purpose and I use React.js and Parcel.js, which is the part of this course.
+- [🥗 FoodieHub App](https://foodie-hubs.netlify.app/) created as practise purpose and I use React.js and Parcel.js, which is the part of this course.
 
 ## 🔥 Clone this Repository
 
 You need to write the following commands on the terminal screen(in vscode) so that you can run this project locally.
 
 ```bash
-  git clone "https://github.com/chetannada/Namaste-React.git"
+  git clone "https://github.com/ganesh1172/Namaste-React.git"
 ```
 
 Go to the project directory
