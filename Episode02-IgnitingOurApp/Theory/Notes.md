@@ -52,6 +52,7 @@
 - error handing
 - HTTPs
 - Tree Shaking - remove unused code
+- Different dev and prod bundles
 
 ### Questions :-
 
@@ -61,12 +62,18 @@
 
 #### Why we should not use CDN(React) link in our project?
 
-1. Fetching from a cdn make costly operation.
-2. There might be change occur in versions(package). So we need to update links in project.
+- Fetching from a cdn make costly operation.
+- There might be change occur in versions(package). So we need to update links in project.
 
 #### Command to:-
 
-- npm init
-- npm install -D parcel
-- npm - Install a package
-- npx - Executing a package
+```
+- npm ==> Install a package
+- npx ==> Executing a package
+- npm init ==> To install packages
+- npx parcel index.html ==> Create bundling/server
+- npx install -D parcel ==> For development
+- npx parcel build index.html ==> For production use please remove existing file name like "App.js". Otherwise it will give you error. 
+- npm install react ==> Install react
+- npm install react-dom ==> Install react-dom
+```
